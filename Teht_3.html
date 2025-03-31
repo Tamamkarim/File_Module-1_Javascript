@@ -6,23 +6,25 @@
 </head>
 <body>
 <h1>greeting</h1>
-<p id="tt"></p>
+<p id="target"></p>
 <script>
     'use strict'; // Käytetään tiukkaa tilaa, jotta vältetään virheitä
-     const num1 = prompt('Syötä ensimmäinen numero:');
-     const num1int = parseInt(num1);
-        // console.log(num1int);
-     const num2 = prompt('Syötä toinen numero:');
-     const num2int = parseInt(num2);
-        // console.log(num2int);
-     const num3 = prompt('Syötä kolmas numero:');
-     const num3int = parseInt(num3);
-        // console.log(num3int);
-     const average = (num1int + num2int + num3int) / 3
-        // console.log(average);
-        
-    document.querySelector('#tt').innerHTML = 'Numeroiden keskiarvo on: ' + average;
+
+    const num1 = prompt('Syötä ensimmäinen numero:');
+    const k1 = parseInt(num1); // Muutetaan ensimmäinen numero kokonaisluvuksi
+
+    const num2 = prompt('Syötä toinen numero:');
+    const k2 = parseInt(num2); // Muutetaan toinen numero kokonaisluvuksi
+
+    const num3 = prompt('Syötä kolmas numero:');
+    const k3 = parseInt(num3); // Muutetaan kolmas numero kokonaisluvuksi
+
+    const average = (k1 + k2 + k3) / 3; // Lasketaan keskiarvo
+
+    document.querySelector('#target').innerHTML = 'Numeroiden keskiarvo on: ' + average;
     console.log('Numeroiden keskiarvo on: ' + average);
 </script>
 </body>
 </html>
+
+
