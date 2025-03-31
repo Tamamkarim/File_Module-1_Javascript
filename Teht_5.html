@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TKarim</title>
+</head>
+<body>
+    <h2>Karkausvuositarkistin</h2>
+    <label for="year">Syötä vuosi:</label>
+    <input type="number" id="year">
+    <button onclick="checkLeapYear()">Tarkista</button>
+    <p id="result"></p>
+
+    <script>
+        'use strict';
+        function checkLeapYear() {
+            const year = parseInt(document.getElementById("year").value);
+            if (isNaN(year)) {
+                alert("Syötä kelvollinen vuosi!");
+                return;
+            }
+            
+            let isLeap = false;
+            if (year % 4 === 0) {
+                if (year % 100 !== 0 || year % 400 === 0) {
+                    isLeap = true;
+                }
+            }
+            
+            const resultText = isLeap ? `${year} on karkausvuosi!` : `${year} ei ole karkausvuosi.`;
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+</body>
+</html>

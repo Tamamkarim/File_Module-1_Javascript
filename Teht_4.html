@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK</title>
+</head>
+<body>
+    <h2>Tylypahkan lajitteluhattu</h2>
+    <label for="name">Anna nimesi:</label>  
+    <input type="text" id="name">
+    <button onclick="sortHouse()">Lähetä</button> 
+    <p id="result"></p>
+    
+    <script>
+        'use strict'; // Käytetään tiukkaa tilaa, jotta vältetään virheitä
+        function sortHouse() {
+            const name = document.getElementById("name").value; 
+            if (!name) {
+                alert("Anna nimesi!");
+                return;
+            }
+                // tarkistetaan onko nimi annettu
+            const houseNumber = Math.floor(Math.random() * 4) + 1;
+            let house;
+            
+            switch (houseNumber) {
+                case 1:
+                    house = "Gryffindor";
+                    break;
+                case 2:
+                    house = "Slytherin";
+                    break;
+                case 3:
+                    house = "Hufflepuff";
+                    break;
+                case 4:
+                    house = "Korpinkynsi";
+                    break;
+                default:
+                    house = "Tuntematon tupa";
+            }
+            
+            document.getElementById("result").textContent = `${name}, olet ${house}!`;
+        }     
+    </script>
+</body>
+</html>

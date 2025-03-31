@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TK</title>
+</head>
+<body>
+<h1>greeting</h1>
+<p id="tt"></p>
+<script>
+    'use strict'; // Käytetään tiukkaa tilaa, jotta vältetään virheitä
+     const num1 = prompt('Syötä ensimmäinen numero:');
+     const num1int = parseInt(num1);
+        // console.log(num1int);
+     const num2 = prompt('Syötä toinen numero:');
+     const num2int = parseInt(num2);
+        // console.log(num2int);
+     const num3 = prompt('Syötä kolmas numero:');
+     const num3int = parseInt(num3);
+        // console.log(num3int);
+     const average = (num1int + num2int + num3int) / 3
+        // console.log(average);
+        
+    document.querySelector('#tt').innerHTML = 'Numeroiden keskiarvo on: ' + average;
+    console.log('Numeroiden keskiarvo on: ' + average);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK_6</title>
+</head>
+<body>
+    <h2>Neliöjuuritarkistin</h2>
+    <button onclick="calculateSquareRoot()">Laske neliöjuuri</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateSquareRoot() {
+            const confirmCalc = confirm("Pitäisikö minun laskea neliöjuuri?");
+            if (!confirmCalc) {
+                document.getElementById("result").textContent = "Neliöjuurta ei lasketa.";
+                return;
+            }
+            
+            const number = parseFloat(prompt("Anna numero:"));
+            if (isNaN(number)) {
+                document.getElementById("result").textContent = "Syötit virheellisen numeron.";
+                return;
+            }
+            
+            if (number < 0) {
+                document.getElementById("result").textContent = "Negatiivisen luvun neliöjuurta ei ole määritelty.";
+            } else {
+                const sqrtValue = Math.sqrt(number);
+                document.getElementById("result").textContent = `Luvun ${number} neliöjuuri on ${sqrtValue}.`;
+            }
+        }
+    </script>
+</body>
+</html>
+
