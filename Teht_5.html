@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TKarim</title>
+    <title>TK_5</title>
 </head>
 <body>
     <h2>Karkausvuositarkistin</h2>
     <label for="year">Syötä vuosi:</label>
-    <input type="number" id="year">
+    <input type="number" id="year" placeholder="Esim. 2025">
     <button onclick="checkLeapYear()">Tarkista</button>
     <p id="result"></p>
 
@@ -16,11 +16,14 @@
         'use strict';
         function checkLeapYear() {
             const year = parseInt(document.getElementById("year").value);
+            
+            // Tarkistetaan, onko syöte kelvollinen
             if (isNaN(year)) {
                 alert("Syötä kelvollinen vuosi!");
                 return;
             }
             
+            // Karkausvuoden tarkistuslogiikka
             let isLeap = false;
             if (year % 4 === 0) {
                 if (year % 100 !== 0 || year % 400 === 0) {
@@ -28,6 +31,7 @@
                 }
             }
             
+            // Tuloksen näyttäminen
             const resultText = isLeap ? `${year} on karkausvuosi!` : `${year} ei ole karkausvuosi.`;
             document.getElementById("result").innerHTML = resultText;
         }
