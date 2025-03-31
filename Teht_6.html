@@ -11,23 +11,28 @@
     <p id="result"></p>
 
     <script>
+        'use strict';
         function calculateSquareRoot() {
+            // Varmistetaan, haluaako käyttäjä laskea neliöjuuren
             const confirmCalc = confirm("Pitäisikö minun laskea neliöjuuri?");
             if (!confirmCalc) {
                 document.getElementById("result").textContent = "Neliöjuurta ei lasketa.";
                 return;
             }
             
+            // Pyydetään käyttäjältä numero
             const number = parseFloat(prompt("Anna numero:"));
             if (isNaN(number)) {
                 document.getElementById("result").textContent = "Syötit virheellisen numeron.";
                 return;
             }
             
+            // Tarkistetaan, onko numero negatiivinen
             if (number < 0) {
                 document.getElementById("result").textContent = "Negatiivisen luvun neliöjuurta ei ole määritelty.";
             } else {
-                const sqrtValue = Math.sqrt(number);
+                // Lasketaan neliöjuuri ja näytetään tulos
+                const sqrtValue = Math.sqrt(number).toFixed(2); // Pyöristetään kahteen desimaaliin
                 document.getElementById("result").textContent = `Luvun ${number} neliöjuuri on ${sqrtValue}.`;
             }
         }
